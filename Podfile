@@ -76,7 +76,7 @@ def shared_with_extension_pods
 end
 
 def gutenberg(options)
-    options[:git] = 'http://github.com/wordpress-mobile/gutenberg-mobile/'
+    options[:git] = 'http://github.com/dcalhoun/gutenberg-mobile/'
     options[:submodules] = true
     local_gutenberg = ENV['LOCAL_GUTENBERG']
     if local_gutenberg
@@ -133,7 +133,7 @@ def gutenberg_dependencies(options)
         podspec_prefix = options[:path]
     else
         tag_or_commit = options[:tag] || options[:commit]
-        podspec_prefix = "https://raw.githubusercontent.com/wordpress-mobile/gutenberg-mobile/#{tag_or_commit}"
+        podspec_prefix = "https://raw.githubusercontent.com/dcalhoun/gutenberg-mobile/#{tag_or_commit}"
     end
 
     for pod_name in dependencies do
@@ -154,7 +154,7 @@ target 'WordPress' do
     ## Gutenberg (React Native)
     ## =====================
     ##
-    gutenberg :tag => 'v1.46.0'
+    gutenberg :commit => '54117ee94c9bd59f3662c576d53ef60cb526c006'
 
     ## Third party libraries
     ## =====================
